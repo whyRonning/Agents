@@ -1,0 +1,2 @@
+export const PhoneValidator = (values) => values && isNaN(Number(values)) ? 'Must be a number' : undefined;
+export const required = (value) => (value || typeof value === 'number' ? undefined : 'Заполните поле');

@@ -1,0 +1,42 @@
+{
+  "name": "appnode",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Anturash",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node app.js",
+    "server": "nodemon app.js",
+    "front": "npm run start --prefix front",
+    "front:install": "npm install --prefix front",
+    "front:build": "npm run build --prefix front",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run front\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "5.2.0",
+    "config": "^3.3.0",
+    "cross-env": "7.0.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2"
+  }
+}
