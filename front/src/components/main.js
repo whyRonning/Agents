@@ -6,18 +6,18 @@ import FourthContainerBlock from "./main-components/main-fourth-container";
 import MainFirstContainer from "./main-components/main-first-container";
 import MainFifthContainer from "./main-components/main-fifth-container";
 import {AlertContainer} from "./main-components/alertMessageContainer";
-class Main extends React.Component {
-  render() {
+
+const Main=React.memo(()=>{
     return (
-      <div className="MainAll">
-        <MainFirstContainer />
-        <MainSecond />
-        <AlertContainer/>
-        <MainThird />
-        <FourthContainerBlock  />
-        <MainFifthContainer />
-      </div>
+        <div className="MainAll">
+            <MainFirstContainer/>
+            <MainSecond/>
+            <AlertContainer/>
+            <MainThird/>
+            <FourthContainerBlock/>
+            <MainFifthContainer/>
+        </div>
     );
-  }
-}
+})
+
 export default Main;

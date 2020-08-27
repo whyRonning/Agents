@@ -7,7 +7,7 @@ let MapStateToProps = (state) => {
     return {
         headerContainerBlock:state.menuDate.DateAboutMenu
     }
-}
-let HeaderContainer = connect(MapStateToProps)(Header)
+};
+let HeaderContainer = connect(MapStateToProps)(Header);
 
 export default HeaderContainer

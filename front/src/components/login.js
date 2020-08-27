@@ -3,7 +3,7 @@ import {AlertContainer} from "./main-components/alertMessageContainer";
 import {Field, reduxForm} from "redux-form";
 import {Input} from "./input";
 
-export let Login = props => {
+export let Login = React.memo(props => {
   let {handleSubmit}=props;
   return (
       <section className="logFormBlock">
@@ -16,7 +16,7 @@ export let Login = props => {
         </form>
       </section>
   );
-};
+});
 Login=reduxForm({
   form:"login"
 })(Login);

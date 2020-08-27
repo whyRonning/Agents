@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export const Object = props => {
+export const Object = React.memo(props => {
   return (
     <div>
       <div className="objDate ">
@@ -26,4 +26,4 @@ export const Object = props => {
       </div>
     </div>
   );
-};
+});

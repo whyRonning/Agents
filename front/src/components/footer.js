@@ -1,11 +1,11 @@
 import React from "react";
-class Footer extends React.Component {
-  render() {
-    return (
+
+const Footer=React.memo(()=>{
+  return (
       <footer>
         <span>© Антураж, Агенство недвижимости. 2019-2020.</span>
       </footer>
-    );
-  }
-}
+  );
+});
+
 export default Footer;

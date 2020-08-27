@@ -11,6 +11,6 @@ let MapStateToProps=state=>{
         IsVisible:state.FormState.isFormVisible
     }
 }
-let MainFirstContainer = connect(MapStateToProps, {HiddenForm,alertReducerAC,messageChangeAC})(MainFirst)
+let MainFirstContainer = connect(MapStateToProps, {HiddenForm,alertReducerAC,messageChangeAC})(MainFirst);
 
 export default MainFirstContainer

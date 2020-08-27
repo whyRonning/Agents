@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NoneObject = () => {
+export const NoneObject =React.memo( () => {
   return (
     <div>
       <div className="Noneobj">
@@ -8,4 +8,4 @@ export const NoneObject = () => {
       </div>
     </div>
   );
-};
+});

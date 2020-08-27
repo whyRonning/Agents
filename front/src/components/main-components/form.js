@@ -4,7 +4,7 @@ import {Field, reduxForm} from "redux-form";
 import {Input} from "../input";
 import {PhoneValidator, required} from "../../store/validates";
 
-export let Form = props => {
+export let Form = React.memo(props => {
     const { handleSubmit} = props;
     return (
         <div className="MainFifth-write">
@@ -24,7 +24,7 @@ export let Form = props => {
             </form>
         </div>
     );
-};
+});
 Form = reduxForm({
     // a unique name for the form
     form: 'contact'

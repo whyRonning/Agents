@@ -9,39 +9,22 @@ import {
   faUser
 } from "@fortawesome/free-solid-svg-icons";
 
-export const PersonalPage = props => {
+export const PersonalPage = React.memo(props => {
   return (
     <section className="objPP">
       <div className="selectedImgLargeBlock">
-        <div
-          style={{
-            backgroundImage:
-              "url(" + props.currentObjectPP.imgSrc[props.selectedImg] + ")"
-          }}
-          className="selectedImgLargeContainer"
-        />
+        <div style={{backgroundImage: "url(" + props.currentObjectPP.imgSrc[props.selectedImg] + ")"}} className="selectedImgLargeContainer"/>
         <FontAwesomeIcon onClick={props.PrevPhoto} icon={faAngleLeft} />
         <FontAwesomeIcon onClick={props.NextPhoto} icon={faAngleRight} />
-        <img
-          className="selectedImgLarge"
-          src={props.currentObjectPP.imgSrc[props.selectedImg]}
-          alt=""
-        />
+        <img className="selectedImgLarge" src={props.currentObjectPP.imgSrc[props.selectedImg]} alt=""/>
       </div>
       <div className="aboutObjPP">
         <div className="infoAboutObjPP">
-          <h3>
-            {props.currentObjectPP.street} {props.currentObjectPP.house}, кв.{" "}
-            {props.currentObjectPP.countApp}
-          </h3>
-          <p>
-            Размер: {props.currentObjectPP.size}м<sup>2</sup>
-          </p>
+          <h3>{props.currentObjectPP.street} {props.currentObjectPP.house}, кв.{" "}{props.currentObjectPP.countApp}</h3>
+          <p>Размер: {props.currentObjectPP.size}м<sup>2</sup></p>
           <p>Количество комнат: {props.currentObjectPP.rooms}</p>
           <p>Район: {props.currentObjectPP.district}</p>
-          <p>
-            Тип: {props.currentObjectPP.type === "house" ? " Дом" : " Квартира"}
-          </p>
+          <p>Тип: {props.currentObjectPP.type === "house" ? " Дом" : " Квартира"}</p>
         </div>
         <div className="SecondAboutObjPP">
           <FontAwesomeIcon icon={faCoins} />
@@ -62,4 +45,4 @@ export const PersonalPage = props => {
       <div className="miniGallery">{props.miniGallery}</div>
     </section>
   );
-};
+});

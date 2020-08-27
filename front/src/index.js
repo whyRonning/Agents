@@ -14,4 +14,4 @@ const rerender=()=> {
 rerender();
 store.subscribe(()=>{
     rerender()
-})
+});

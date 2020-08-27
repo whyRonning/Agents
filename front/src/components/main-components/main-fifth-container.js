@@ -8,7 +8,7 @@ let MapStateToProps=(state)=>{
 
         realtorsDate:state.realtorsDate.teamDate
     }
-}
-let MainFifthContainer = connect(MapStateToProps,{alertReducerAC,messageChangeAC})(MainFifth)
+};
+let MainFifthContainer = connect(MapStateToProps,{alertReducerAC,messageChangeAC})(MainFifth);
 
 export default MainFifthContainer

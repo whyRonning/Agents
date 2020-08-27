@@ -4,81 +4,33 @@ import { faFileUpload } from "@fortawesome/free-solid-svg-icons";
 import { AlertContainer } from "./main-components/alertMessageContainer";
 
 export let DataFilling = React.memo(props => {
-  let ChangeInputInfoStreetFunc = e => {
-    props.ChangeInputInfoStreetAC(e.target.value);
-  };
-  let ChangeInputInfoHouseFunc = e => {
-    props.ChangeInputInfoHouseAC(e.target.value);
-  };
-  let ChangeInputInfoCostFunc = e => {
-    props.ChangeInputInfoCostAC(e.target.value);
-  };
-  let ChangeInputInfoPassFunc = e => {
-    props.ChangeInputInfoPassAC(e.target.value);
-  };
-  let ChangeInputInfoCountAppFunc = e => {
-    props.ChangeInputInfoCountAppAC(e.target.value);
-  };
-  let ChangeInputInfoNameFunc = e => {
-    props.ChangeInputInfoNameAC(e.target.value);
-  };
-  let ChangeInputInfoTypeFunc = e => {
-    props.ChangeInputInfoTypeAC(e.target.value);
-  };
-  let ChangeInputInfoDistrictFunc = e => {
-    props.ChangeInputInfoDistrictAC(e.target.value);
-  };
-  let ChangeInputInfoSizeFunc = e => {
-    props.ChangeInputInfoSizeAC(e.target.value);
-  };
-  let ChangeInputInfoRoomsFunc = e => {
-    props.ChangeInputInfoRoomsAC(e.target.value);
-  };
-  let imgSendFunc = e => {
-    props.ImgSrcClearAC();
-    props.ImgCountAC(e.target.files.length);
-    props.imgSend(e);
-  };
+  let ChangeInputInfoStreetFunc = e => {props.ChangeInputInfoStreetAC(e.target.value);};
+  let ChangeInputInfoHouseFunc = e => {props.ChangeInputInfoHouseAC(e.target.value);};
+  let ChangeInputInfoCostFunc = e => {props.ChangeInputInfoCostAC(e.target.value);};
+  let ChangeInputInfoPassFunc = e => {props.ChangeInputInfoPassAC(e.target.value);};
+  let ChangeInputInfoCountAppFunc = e => {props.ChangeInputInfoCountAppAC(e.target.value);};
+  let ChangeInputInfoNameFunc = e => {props.ChangeInputInfoNameAC(e.target.value);};
+  let ChangeInputInfoTypeFunc = e => {props.ChangeInputInfoTypeAC(e.target.value);};
+  let ChangeInputInfoDistrictFunc = e => {props.ChangeInputInfoDistrictAC(e.target.value);};
+  let ChangeInputInfoSizeFunc = e => {props.ChangeInputInfoSizeAC(e.target.value);};
+  let ChangeInputInfoRoomsFunc = e => {props.ChangeInputInfoRoomsAC(e.target.value);};
+  let imgSendFunc = e => {props.ImgSrcClearAC();props.ImgCountAC(e.target.files.length);props.imgSend(e);};
   return (
     <section>
       <AlertContainer />
       <div className="DataFillingBlock">
         <div className="DataFilling">
           <h3>Данные об объекте</h3>
-          <input
-            placeholder="Улица"
-            onChange={ChangeInputInfoStreetFunc}
-            value={props.inputInfo.street}
-          />
-          <input
-            placeholder="Номер дома"
-            onChange={ChangeInputInfoHouseFunc}
-            value={props.inputInfo.house}
-          />
-          <input
-            placeholder="Номер квартиры"
-            onChange={ChangeInputInfoCountAppFunc}
-            value={props.inputInfo.countApp}
-          />
+          <input placeholder="Улица" onChange={ChangeInputInfoStreetFunc} value={props.inputInfo.street}/>
+          <input placeholder="Номер дома" onChange={ChangeInputInfoHouseFunc} value={props.inputInfo.house}/>
+          <input placeholder="Номер квартиры" onChange={ChangeInputInfoCountAppFunc} value={props.inputInfo.countApp}/>
           <div>
-            <input
-              placeholder="Цена"
-              onChange={ChangeInputInfoCostFunc}
-              value={props.inputInfo.cost}
-            />
+            <input placeholder="Цена" onChange={ChangeInputInfoCostFunc} value={props.inputInfo.cost}/>
             <label>₽</label>
           </div>
-          <input
-            placeholder="Количество комнат"
-            value={props.inputInfo.rooms}
-            onChange={ChangeInputInfoRoomsFunc}
-          />
+          <input placeholder="Количество комнат" value={props.inputInfo.rooms} onChange={ChangeInputInfoRoomsFunc}/>
           <div>
-            <input
-              placeholder="Размер объекта"
-              value={props.inputInfo.size}
-              onChange={ChangeInputInfoSizeFunc}
-            />
+            <input placeholder="Размер объекта" value={props.inputInfo.size} onChange={ChangeInputInfoSizeFunc}/>
             <label>
               м<sup>2</sup>
             </label>
@@ -104,13 +56,7 @@ export let DataFilling = React.memo(props => {
             {props.options}
           </select>
           <h3>Фотографии объекта (Загрузить все разом)</h3>
-          <input
-            type="file"
-            id="file"
-            name="photos"
-            onChange={imgSendFunc}
-            multiple
-          />
+          <input type="file" id="file" name="photos" onChange={imgSendFunc} multiple/>
           <label htmlFor="file" className="label4Files">
             <FontAwesomeIcon icon={faFileUpload} />{" "}
             {props.imgCount === 0
@@ -121,11 +67,7 @@ export let DataFilling = React.memo(props => {
               ? props.imgCount + " файла"
               : props.imgCount + " файлов"}
           </label>
-          <input
-            placeholder="Введите пароль повторно "
-            onChange={ChangeInputInfoPassFunc}
-            value={props.inputInfo.pass}
-          />
+          <input placeholder="Введите пароль повторно " onChange={ChangeInputInfoPassFunc} value={props.inputInfo.pass}/>
           <button onClick={props.sendObjectsInfo}>Отправить</button>
         </div>
       </div>
