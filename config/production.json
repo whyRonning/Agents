@@ -1,6 +1,6 @@
 {
   "port": 5000,
-  "MongoURI": "mongodb+srv://derty:jlbytuj,ydti@cluster0-fa1bo.azure.mongodb.net/test?retryWrites=true&w=majority",
+  "MongoURI": "mongodb+srv://derty:RN2jDyEgpV@cluster0-fa1bo.azure.mongodb.net/test?retryWrites=true&w=majority",
   "login": "Anturazh",
   "jwtSecretCode": "My secretCode for Anturazh a"
 }

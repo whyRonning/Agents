@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileUpload } from "@fortawesome/free-solid-svg-icons";
 import { AlertContainer } from "./main-components/alertMessageContainer";
 
-export let DataFilling = props => {
+export let DataFilling = React.memo(props => {
   let ChangeInputInfoStreetFunc = e => {
     props.ChangeInputInfoStreetAC(e.target.value);
   };
@@ -131,4 +131,4 @@ export let DataFilling = props => {
       </div>
     </section>
   );
-};
+});

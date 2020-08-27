@@ -36,6 +36,7 @@ router.post(
 router.get("/getTeam",async (req,res)=>{
   try {
     let data= await Team.find();
+
     res.status(201).json({message:data})
   }
   catch (e) {
