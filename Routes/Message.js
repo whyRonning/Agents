@@ -23,7 +23,7 @@ router.post(
       let { name, email, phone, message } = req.body;
       if (!message) {
         message=" "
-        console.log(message)
+
       }
       let user = new User({ name, email, phone, message });
       await user.save();
