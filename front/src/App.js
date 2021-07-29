@@ -21,6 +21,7 @@ const App=React.memo(()=>{
                 <PreloaderContainer/>
                 <MobileMenuContainer/>
                 <main>
+
                     <Route exact path="/" render={() => <Main/>}/>
                     <Route exact path='/objects' render={() => <ObjectsContainer/>}/>
                     <Route exact path='/objects/:objId' render={() => <ObjectPPContainer/>}/>

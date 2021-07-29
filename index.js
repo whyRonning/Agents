@@ -1,7 +1,7 @@
 const express = require("express");
 const config = require("config");
-const path = require("path");
 const mongoose = require("mongoose");
+const path = require("path");
 const app = express();
 app.use(express.json({ extended: true }));
 app.use("/api", require("./Routes/Message"));
@@ -11,10 +11,10 @@ if (process.env.Node_ENV === "production") {
     res.sendFile(path.join(__dirname, "front", "build", "index.html"));
   });
 }
-const Port = config.get("port") || 5000;
+const Port = config.get("port") || 3000;
 async function start() {
   try {
-    await mongoose.connect(config.get("MongoURI"), {
+    await mongoose.connect(config.get("MongoURL"), {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true
@@ -25,5 +25,4 @@ async function start() {
     process.exit(1);
   }
 }
-
 start();

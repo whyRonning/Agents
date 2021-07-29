@@ -4,9 +4,9 @@ import * as axios from "axios";
     export const PostImg= (img)=>{
         const formData = new FormData();
         formData.append('image', img);
-        return axios.post('https://api.imgur.com/3/image', formData, {
+        return axios.post('https://api.imgur.com/3/upload', formData, {
             headers: {
-                "Authorization": "Client-ID 3c8a1f2523ec2fe"
+                "Authorization": "Client-ID 13673efe05ed032"
             }
         })
 };

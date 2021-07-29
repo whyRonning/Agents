@@ -35,8 +35,8 @@ router.post(
 );
 router.get("/getTeam",async (req,res)=>{
   try {
-    let data= await Team.find();
 
+    let data= await Team.find();
     res.status(201).json({message:data})
   }
   catch (e) {
@@ -48,6 +48,7 @@ router.post("/SendObj", async (req, res) => {
   try {
     let {name, secondName, type, pass, district, size, phone, ImgSrc, cost, rooms, street, countApp, house} = req.body;
     let all = [name, secondName, type, district, size, phone, ImgSrc, cost, rooms, street, countApp, house];
+    console.log(all)
     for (let i = 0; i < all.length; i++) {
       if (!all[i]) {
         return res.status(400).json({ message: "Не все данные были заполнены" });
@@ -100,21 +101,17 @@ router.post("/personalObjects", async (req, res) => {
 });
 router.post("/register", async (req, res) => {
   try {
-    let { loginText, passwordText } = req.body;
-    let cand = await UserObjRegOrLog.findOne({ loginText });
-    if (cand) {
-      return res
-        .status(404)
-        .json({ message: "Такой пользователь уже существует" });
-    }
-    let HashedPass = await bcrypt.hash(passwordText, 11);
+    console.log(req.body)
+    let { name,message } = req.body;
+    let HashedPass = await bcrypt.hash(message, 11);
     let userObj = new UserObjRegOrLog({
-      login: loginText,
+      login: name,
       password: HashedPass
     });
     await userObj.save();
     res.status(201).json({ message: "Пользователь зарегистрирован" });
   } catch (e) {
+
     res.status(500).json({ message: "Что-то пошло не так,попробуйте снова" });
   }
 });

@@ -5,6 +5,7 @@ const schema = new Schema({
     SecondName: {type: String, required: true},
     Position: {type: String, required: true},
     Photo: {type: String, required: true},
-    Mail: {type: String, required: true}
+    Mail: {type: String, required: true},
+    Phone:{type:String,required:true}
 })
 module.exports = model("Team", schema);
